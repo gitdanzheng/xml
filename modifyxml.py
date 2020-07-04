@@ -65,15 +65,15 @@ def df_to_pzfx(prodrug, df):
             j += 1
 
     new_file_name = f"{prodrug}.pzfx"
-    # with open(new_file_name, "w") as f:
-    #     f.write(r'<?xml version="1.0" encoding="UTF-8"?>')
-    tree.write(new_file_name)
+    with open(new_file_name, "w") as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>')
+    tree.write(open(new_file_name, "ab"), encoding="UTF-8")
 
 
 def main():
     prodrug, df = plasma_pzfx_to_df()
 
-    df2 = df+"aaa2"
+    df2 = df+"test2"
 
     df_to_pzfx("test_prodrug", df2)
 
